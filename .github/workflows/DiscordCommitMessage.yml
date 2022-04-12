@@ -36,7 +36,7 @@ jobs:
         uses: Sniddl/discord-commits@v1.3
         with:
           webhook: https://discord.com/api/webhooks/963508936760238183/LMav_jRnXcFzXhUpduLmCaUWS7XDzccoGAOT7FId5et1aYBeAVcuA5li6PmBocqu-Ho8
-          embed: '{ 
+          embed: '{
                 "title": "__{{commit.title}}__",
                 "description":"
                 ```
@@ -46,9 +46,7 @@ jobs:
                 Date: ${{steps.date.outputs.date}}
                 ```
                 \r\n
-                ```
-                {{commit.description}}
-                ```
+                ```{{commit.description}}```
                 @here
                   "
                   }'
