@@ -1,0 +1,37 @@
+name: Build MangosSharp
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: windows-latest 
+
+    env:
+      Solution_Path: ./FrostEvo.Core.sln
+      Configuration: Release
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore
+      run: dotnet restore $env:Solution_Path
+
+    - name: Build
+      run: dotnet build --no-restore $env:Solution_Path
+
+    - name: Test
+      run: dotnet test --no-restore $env:Solution_Path
+
+    - name: Verify
+      run: dotnet format --verify-no-changes --no-restore $env:Solution_Path

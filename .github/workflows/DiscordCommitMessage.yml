@@ -47,6 +47,5 @@ jobs:
                 ```
                 \r\n
                 ```{{commit.description}}```
-                @here
                   "
                   }'
