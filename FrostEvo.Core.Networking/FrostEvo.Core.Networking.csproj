@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FrostEvo.Core.Collections\FrostEvo.Core.Collections.csproj" />
+      <ProjectReference Include="..\FrostEvo.Core.Extensions\FrostEvo.Core.Extensions.csproj" />
+      <ProjectReference Include="..\FrostEvo.Core.Services\FrostEvo.Core.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="fasterflect" Version="3.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    </ItemGroup>
+
+</Project>

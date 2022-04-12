@@ -1,0 +1,40 @@
+﻿{
+  "DatabaseConfiguration": {
+    "Host": "localhost",
+    "Username": "frostevo",
+    "Password": "frostevo",
+    "UserSchema": "FrostEvoWoW.User",
+    "WorldSchema": "FrostEvoWoW.World",
+    "WebSchema": "FrostEvoWoW.Web",
+    "LogSchema": "FrostEvoWoW",
+    "Extra": "Charset=utf8; Pooling = true;",
+    "PasswordCryptKey": "79B6442AD2236A66B8A287CECA9D782D"
+  },
+  "NetworkConfiguration": {
+    "ServerName": "FrostEvo",
+    "Host": "localhost",
+    "AuthPort": 50001,
+    "WorldPort": 50002,
+    "Permission": 0,
+    "MaxConnectionAllowed": 1000,
+    "BackLog": 5,
+    "Delay": false,
+    "Fragment": false
+  },
+  "GameConfiguration": {
+      "MaxLevel": 60,
+      "ExperienceRate": 1.0,
+      "ProfessionRate": 1.0,
+      "DropRate": 1.0,
+      "LifeRegenerationRate": 1.0,
+      "ManaRegenerationRate": 1.0,
+      "GlobalAuction": false,
+      "SaveInterval": 3,
+      "WeatherInterval": 30,
+      "MapResolution": 256,
+      "VMapsEnabled": false,
+      "VMapsLoSEnabled": false,
+      "VMapsHeightEnabled": false,
+      "CommandPrefix": "."
+  }
+}
