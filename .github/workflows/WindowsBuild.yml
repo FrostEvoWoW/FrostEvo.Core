@@ -1,4 +1,4 @@
-name: Build MangosSharp
+name: Build FrostEvo.Core
 
 on:
   push:
@@ -28,10 +28,4 @@ jobs:
       run: dotnet restore $env:Solution_Path
 
     - name: Build
-      run: dotnet build --no-restore $env:Solution_Path
-
-    - name: Test
-      run: dotnet test --no-restore $env:Solution_Path
-
-    - name: Verify
-      run: dotnet format --verify-no-changes --no-restore $env:Solution_Path
+      run: dotnet build --configuration Release $env:Solution_Path
