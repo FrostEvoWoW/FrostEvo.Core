@@ -19,9 +19,8 @@ public class LogManager : ISingletonService
 
     public static ILogger CreateLogger(string name)
     {
-#if DEBUG
         var loglevel = LogEventLevel.Verbose;
-#elif RELEASE
+#if RELEASE
         var logLevel = LogEventLevel.Information;
 #endif
         return new LoggerConfiguration()
@@ -32,7 +31,8 @@ public class LogManager : ISingletonService
                 outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
             .WriteTo.MongoDBBson(configuration =>
             {
-                configuration.SetConnectionString($"mongodb://localhost:27017/{new Configuration().DatabaseConfiguration.LogSchema}");
+                configuration.SetConnectionString(
+                    $"mongodb://localhost:27017/{new Configuration().DatabaseConfiguration.LogSchema}");
                 configuration.SetBatchPeriod(TimeSpan.FromSeconds(1));
                 configuration.SetCollectionName(name);
             })
